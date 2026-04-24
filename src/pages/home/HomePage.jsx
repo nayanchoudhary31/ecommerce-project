@@ -3,9 +3,8 @@ import "./HomePage.css";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import ProductGrid from "./ProductGrid";
-function HomePage() {
+function HomePage({ cartItems }) {
   const [products, setProducts] = useState([]);
-  const [cartItems, setCartItems] = useState([]);
 
   useEffect(() => {
     axios
@@ -15,16 +14,6 @@ function HomePage() {
       })
       .catch((error) => {
         console.error("Error fetching products:", error);
-      });
-
-    axios
-      .get("/api/cart-items")
-      .then((response) => {
-        console.log("Cart items:", response.data);
-        setCartItems(response.data);
-      })
-      .catch((error) => {
-        console.error("Error fetching cart items:", error);
       });
   }, []);
 
