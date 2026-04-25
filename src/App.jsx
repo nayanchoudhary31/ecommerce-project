@@ -2,7 +2,7 @@ import { Route, Routes } from "react-router";
 import "./App.css";
 import HomePage from "./pages/home/HomePage";
 import Checkout from "./pages//checkout/CheckoutPage";
-import Orders from "./pages/OrderPage";
+import Orders from "./pages/orders/OrderPage";
 import Tracking from "./pages/Tracking";
 import NotFoundPage from "./pages/NotFoundPage";
 import { useEffect, useState } from "react";
