@@ -7,14 +7,15 @@ function HomePage({ cartItems }) {
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
-    axios
-      .get("/api/products")
-      .then((response) => {
+    const getProducts = async () => {
+      try {
+        const response = await axios.get("/api/products");
         setProducts(response.data);
-      })
-      .catch((error) => {
+      } catch (error) {
         console.error("Error fetching products:", error);
-      });
+      }
+    };
+    getProducts();
   }, []);
 
   return (
